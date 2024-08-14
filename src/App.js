@@ -1,12 +1,12 @@
-import Loader from './assets/Loader.png'
 import './App.css'
 import Header from './layout/Header'
+import Home from './pages/Home'
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <img src={Loader} className="loader" alt="Loader" />
+      <Home />
     </div>
   )
 }
