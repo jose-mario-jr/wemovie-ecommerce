@@ -3,8 +3,10 @@
   background-color: #2f2e41;
   font-size: calc(10px + 2vmin);
   color: white;
-  min-height: 100vh;
+  height: 100vh;
   font-family: 'Open Sans', sans-serif;
+  max-width: 1080px;
+  margin: auto;
 }
 
 .App-logo {
@@ -50,4 +52,46 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.empty-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  min-height: inherit;
+  margin-left: 16px;
+  margin-right: 16px;
+  border-radius: 4px;
+  padding: 40px;
+}
+
+.empty-page p {
+  color: #2f2e41;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27.24px;
+}
+
+button {
+  border: none;
+  color: white;
+  height: 40px;
+  padding: 8px;
+  border-radius: 4px;
+  min-width: 157px;
+}
+
+button.empty {
+  background-color: #009edd;
+  transition: all 0.3s ease-out;
+}
+
+button.empty:hover {
+  background-color: #0073a1;
+}
+
+button.selected {
+  background-color: #039b00;
 }
