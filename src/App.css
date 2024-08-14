@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-color: #2f2e41;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App-logo {
@@ -7,25 +12,35 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 88px;
+  padding: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header .cart-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.App-header .cart-container img {
+  height: 24px;
+  width: 24px;
+  padding: 8px;
+}
+
+.App-header .cart-container span {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loader {
+    animation: App-logo-spin infinite 2s linear;
+  }
 }
 
 @keyframes App-logo-spin {
