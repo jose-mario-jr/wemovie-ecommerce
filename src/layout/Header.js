@@ -6,7 +6,7 @@ const Header = props => {
 
   return (
     <header className="App-header">
-      <div className="title" onClick={() => props.navigateTo('')}>
+      <div className="title" onClick={() => props.navigateTo()}>
         WeMovies
       </div>
       <div className="cart-container" onClick={() => props.navigateTo('cart')}>

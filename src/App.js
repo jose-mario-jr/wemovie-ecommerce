@@ -3,6 +3,7 @@ import Header from './layout/Header'
 import Cart from './pages/Cart'
 import Home from './pages/Home'
 import { useEffect, useState } from 'react'
+import Success from './pages/Success'
 
 const App = () => {
   const [loading, setLoading] = useState(true)
@@ -22,23 +23,25 @@ const App = () => {
     getData()
   }, [])
 
-  const navigateTo = r => {
+  const navigateTo = (r = '') => {
     window.history.pushState({}, '', `/${r}`)
     setRoute(r || 'home')
   }
   return (
     <div className="App">
-      <Header
-        cart={cart}
-        route={route}
-        navigateTo={navigateTo}
-      />
+      <Header cart={cart} route={route} navigateTo={navigateTo} />
       {route === 'home' && (
         <Home loading={loading} movies={movies} cart={cart} setCart={setCart} />
       )}
       {route === 'cart' && (
-        <Cart movies={movies} cart={cart} setCart={setCart} />
+        <Cart
+          movies={movies}
+          cart={cart}
+          setCart={setCart}
+          navigateTo={navigateTo}
+        />
       )}
+      {route === 'success' && <Success voltar={navigateTo} />}
     </div>
   )
 }
