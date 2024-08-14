@@ -1,3 +1,4 @@
+import React from 'react'
 
 import SuccessIcon from '../assets/Success.svg'
 

@@ -4,6 +4,7 @@ import Cart from './pages/Cart'
 import Home from './pages/Home'
 import { useEffect, useState } from 'react'
 import Success from './pages/Success'
+import React from 'react'
 
 const App = () => {
   const [loading, setLoading] = useState(true)
@@ -27,6 +28,7 @@ const App = () => {
     window.history.pushState({}, '', `/${r}`)
     setRoute(r || 'home')
   }
+
   return (
     <div className="App">
       <Header cart={cart} route={route} navigateTo={navigateTo} />

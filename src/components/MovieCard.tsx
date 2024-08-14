@@ -1,3 +1,4 @@
+import React from 'react'
 import AddCart from '../assets/AddCart.svg'
 
 const MovieCard = props => {
@@ -19,7 +20,10 @@ const MovieCard = props => {
         <p>{title}</p>
         <span>R$ {price}</span>
       </div>
-      <button className={cartCount ? 'selected' : 'empty'} onClick={onClickAddToCart}>
+      <button
+        className={cartCount ? 'selected' : 'empty'}
+        onClick={onClickAddToCart}
+      >
         <div>
           <img src={AddCart} alt="Add to cart" />
           <span>{cartCount || 0}</span>

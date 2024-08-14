@@ -1,3 +1,4 @@
+import React from 'react'
 import ReloadPage from '../assets/Reload-page.svg'
 
 const EmptyPage = () => {

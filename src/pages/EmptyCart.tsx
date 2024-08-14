@@ -1,6 +1,7 @@
+import React from 'react'
 import ReloadPage from '../assets/Reload-page.svg'
 
-const EmptyCart = (props) => {
+const EmptyCart = props => {
   return (
     <div className="empty-page">
       <p>Parece que não há nada por aqui</p>

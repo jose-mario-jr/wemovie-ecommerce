@@ -1,3 +1,4 @@
+import React from 'react'
 import MovieCard from '../components/MovieCard'
 import Loader from '../layout/Loader'
 import EmptyPage from './EmptyPage'
