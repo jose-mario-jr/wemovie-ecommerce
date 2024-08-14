@@ -44,13 +44,21 @@ body,
   font-weight: 700;
   line-height: 27.24px;
   text-align: left;
+  cursor: pointer;
 }
 
 .App-header .cart-container {
   display: flex;
   align-items: center;
   gap: 8px;
-  height: 40px;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 8px 4px;
+}
+.App-header .cart-container:hover {
+  background-color: #00000010;
+  border-radius: 4px;
+  transition: all 0.3s ease-out;
 }
 .App-header .cart-container img {
   height: 40px;

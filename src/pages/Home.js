@@ -1,9 +1,13 @@
 import MovieCart from '../components/MovieCart'
+import Loader from '../layout/Loader'
+import EmptyPage from './EmptyPage'
 
 const Home = props => {
-  const { cart, setCart } = props
+  const { cart, loading, movies, setCart } = props
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : movies.length > 0 ? (
     <div className="movie-card-container">
       {props.movies.map(movie => (
         <MovieCart
@@ -14,6 +18,8 @@ const Home = props => {
         />
       ))}
     </div>
+  ) : (
+    <EmptyPage />
   )
 }
 
