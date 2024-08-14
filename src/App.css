@@ -1,3 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+#root {
+  background-color: #2f2e41;
+}
 .App {
   text-align: center;
   background-color: #2f2e41;
@@ -22,14 +32,22 @@
   padding: 16px;
 }
 
+.App-header .title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27.24px;
+  text-align: left;
+}
+
 .App-header .cart-container {
   display: flex;
   align-items: center;
   gap: 8px;
+  height: 40px;
 }
 .App-header .cart-container img {
-  height: 24px;
-  width: 24px;
+  height: 40px;
+  width: 40px;
   padding: 8px;
 }
 
@@ -37,6 +55,15 @@
   color: #999999;
   font-size: 12px;
   font-weight: 600;
+  /* text-align: right; */
+
+}
+
+.App-header .card-label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.07px;
+  text-align: right;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -137,4 +164,16 @@ button img {
 
 .movie-card button {
   width: 100%;
+}
+
+@media (max-width: 1080px) and (min-width: 500px) {
+  .movie-card-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .movie-card-container {
+    grid-template-columns: 1fr;
+  }
 }

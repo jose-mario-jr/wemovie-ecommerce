@@ -4,7 +4,10 @@ const Header = () => (
   <header className="App-header">
     <div className="title">WeMovies</div>
     <div className="cart-container">
-      <span>0 itens</span>
+      <div className="card-label">
+        <p>Meu Carrinho</p>
+        <span>0 itens</span>
+      </div>
       <img src={Cart} className="Cart" alt="Cart" />
     </div>
   </header>
