@@ -81,6 +81,7 @@ button {
   padding: 8px;
   border-radius: 4px;
   min-width: 157px;
+  cursor: pointer;
 }
 
 button.empty {
@@ -94,4 +95,46 @@ button.empty:hover {
 
 button.selected {
   background-color: #039b00;
+}
+
+button img {
+  width: 14px;
+  height: 14px;
+}
+
+.movie-card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.movie-card {
+  background-color: white;
+  border-radius: 4px;
+  padding: 16px;
+}
+.movie-card p {
+  color: #333333;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16.34px;
+  text-align: center;
+}
+.movie-card span {
+  color: #2f2e41;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21.79px;
+  text-align: center;
+}
+
+.movie-card img.cover {
+  width: 147px;
+  height: 188px;
+}
+
+.movie-card button {
+  width: 100%;
 }
