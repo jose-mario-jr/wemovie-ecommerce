@@ -1,13 +1,18 @@
 import MovieCart from '../components/MovieCart'
 
 const Home = props => {
+  const { cart, setCart } = props
+
   return (
-    <div>
-      <div className="movie-card-container">
-        {props.movies.map(movie => (
-          <MovieCart key={movie.id} movie={movie} />
-        ))}
-      </div>
+    <div className="movie-card-container">
+      {props.movies.map(movie => (
+        <MovieCart
+          key={movie.id}
+          movie={movie}
+          cartCount={cart[movie.id]}
+          setCart={setCart}
+        />
+      ))}
     </div>
   )
 }

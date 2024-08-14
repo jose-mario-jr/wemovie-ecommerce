@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 const App = () => {
   const [loading, setLoading] = useState(true)
   const [movies, setMovies] = useState([])
+  const [cart, setCart] = useState({})
 
   useEffect(() => {
     const getData = async () => {
@@ -22,11 +23,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      <Header cart={cart} />
       {loading ? (
         <Loader />
       ) : movies.length > 0 ? (
-        <Home movies={movies} />
+        <Home movies={movies} cart={cart} setCart={setCart} />
       ) : (
         <EmptyPage />
       )}

@@ -5,6 +5,12 @@
   outline: 0;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+}
+
 #root {
   background-color: #2f2e41;
 }
@@ -13,14 +19,15 @@
   background-color: #2f2e41;
   font-size: calc(10px + 2vmin);
   color: white;
-  height: 100vh;
+  height: 100%;
   font-family: 'Open Sans', sans-serif;
   max-width: 1080px;
   margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
+.loader {
+  height: 62px;
+  width: 62px;
   pointer-events: none;
 }
 
@@ -56,7 +63,6 @@
   font-size: 12px;
   font-weight: 600;
   /* text-align: right; */
-
 }
 
 .App-header .card-label {
@@ -86,12 +92,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  justify-content: space-evenly;
   background-color: white;
-  min-height: inherit;
   margin-left: 16px;
   margin-right: 16px;
   border-radius: 4px;
   padding: 40px;
+  height: calc(100% - 128px);
+  margin-bottom: 40px;
 }
 
 .empty-page p {
@@ -109,6 +117,28 @@ button {
   border-radius: 4px;
   min-width: 157px;
   cursor: pointer;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-card button div {
+  display: flex;
+}
+.movie-card button p {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16.34px;
+  text-align: center;
+  color: white;
+}
+.movie-card button span {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.34px;
+  text-align: center;
+  color: white;
 }
 
 button.empty {
@@ -136,6 +166,14 @@ button img {
 
   margin-left: 16px;
   margin-right: 16px;
+
+  max-height: calc(100% - 108px);
+  /* padding-bottom: 40px; */
+  overflow-x: scroll;
+}
+
+.movie-card-container::-webkit-scrollbar {
+  display: none;
 }
 .movie-card {
   background-color: white;
