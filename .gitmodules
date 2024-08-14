@@ -1,0 +1,3 @@
+[submodule "wemovie-ecommerce"]
+	path = wemovie-ecommerce
+	url = git@github.com:jose-mario-jr/wemovie-ecommerce.git
