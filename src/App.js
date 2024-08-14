@@ -22,7 +22,7 @@ const App = () => {
     getData()
   }, [])
 
-  const gotoRoute = r => {
+  const navigateTo = r => {
     window.history.pushState({}, '', `/${r}`)
     setRoute(r || 'home')
   }
@@ -30,8 +30,8 @@ const App = () => {
     <div className="App">
       <Header
         cart={cart}
-        goHome={() => gotoRoute('')}
-        gotoCart={() => gotoRoute('cart')}
+        route={route}
+        navigateTo={navigateTo}
       />
       {route === 'home' && (
         <Home loading={loading} movies={movies} cart={cart} setCart={setCart} />

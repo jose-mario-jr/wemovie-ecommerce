@@ -1,6 +1,6 @@
 import AddCart from '../assets/AddCart.svg'
 
-const MovieCart = props => {
+const MovieCard = props => {
   const { id, title, price, image } = props.movie
   const { cartCount, setCart } = props
 
@@ -30,4 +30,4 @@ const MovieCart = props => {
   )
 }
 
-export default MovieCart
+export default MovieCard

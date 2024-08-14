@@ -1,4 +1,4 @@
-import MovieCart from '../components/MovieCart'
+import MovieCard from '../components/MovieCard'
 import Loader from '../layout/Loader'
 import EmptyPage from './EmptyPage'
 
@@ -10,7 +10,7 @@ const Home = props => {
   ) : movies.length > 0 ? (
     <div className="movie-card-container">
       {props.movies.map(movie => (
-        <MovieCart
+        <MovieCard
           key={movie.id}
           movie={movie}
           cartCount={cart[movie.id]}
