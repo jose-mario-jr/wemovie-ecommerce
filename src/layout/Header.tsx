@@ -11,7 +11,7 @@ const Header = props => {
       </div>
       <div className="cart-container" onClick={() => props.navigateTo('cart')}>
         <div className="card-label">
-          {props.route != 'cart' && <p>Meu Carrinho</p>}
+          {props.route !== 'cart' && <p>Meu Carrinho</p>}
           <span>{countItems || 0} itens</span>
         </div>
         <img src={CartIcon} className="Cart" alt="Cart" />

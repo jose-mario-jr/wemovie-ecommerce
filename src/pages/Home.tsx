@@ -1,7 +1,7 @@
 import React from 'react'
-import MovieCard from '../components/MovieCard'
-import Loader from '../layout/Loader'
-import EmptyPage from './EmptyPage'
+import MovieCard from '../components/MovieCard.tsx'
+import Loader from '../layout/Loader.tsx'
+import EmptyPage from './EmptyPage.tsx'
 
 const Home = props => {
   const { cart, loading, movies, setCart } = props

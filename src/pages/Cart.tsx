@@ -1,18 +1,20 @@
-import CartItem from '../components/CartItem'
+import React from 'react'
 
-import EmptyCart from './EmptyCart'
+import CartItem from '../components/CartItem.tsx'
+import EmptyCart from './EmptyCart.tsx'
 
 const Cart = props => {
   const { cart, movies, setCart } = props
 
-  const cartMovies = Object.keys(cart).map(id => movies.find(e => e.id == id))
+  const cartMovies = Object.keys(cart)
+    .map(id => movies.find(e => e.id === parseInt(id)))
+    .filter(e => e)
 
   const totalValue = cartMovies.reduce((acc, movie) => {
     return acc + movie.price * cart[movie.id]
   }, 0)
 
   const finishOrder = () => {
-    // alert('Pedido finalizado com sucesso!')
     setCart({})
     props.navigateTo('success')
   }
