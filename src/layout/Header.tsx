@@ -1,3 +1,4 @@
+import React from 'react'
 import CartIcon from '../assets/Cart.svg'
 
 const Header = props => {

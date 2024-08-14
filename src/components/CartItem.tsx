@@ -1,3 +1,4 @@
+import React from 'react'
 import Trash from '../assets/Trash.svg'
 import Minus from '../assets/Minus.svg'
 import Plus from '../assets/Plus.svg'
@@ -36,13 +37,13 @@ const CartItem = props => {
           <span className="price">R$ {price}</span>
           <img src={Trash} alt="Delete" onClick={() => removeFromCart(true)} />
         </div>
-        <div class="bottom">
+        <div className="bottom">
           <div className="count-form">
             <img src={Minus} alt="Delete" onClick={() => removeFromCart()} />
             <input type="number" value={cartCount} readOnly />
             <img src={Plus} alt="Add to cart" onClick={addToCart} />
           </div>
-          <div class="subtotal">
+          <div className="subtotal">
             <p>subtotal</p>
             <span>R$ {(price * cartCount).toFixed(2)}</span>
           </div>
