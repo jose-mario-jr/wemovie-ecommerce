@@ -70,13 +70,22 @@ const CartItem = ({ movie, cartCount, setCart }: CartItemProps) => {
           </CoverPrice>
         </CoverContainer>
         <CountForm>
-          <PointerImg src={Minus} alt="Delete" onClick={() => removeFromCart()} />
+          <PointerImg
+            src={Minus}
+            alt="Delete"
+            onClick={() => removeFromCart()}
+          />
           <QtInput type="number" value={cartCount} readOnly />
           <PointerImg src={Plus} alt="Add to cart" onClick={addToCart} />
         </CountForm>
-        <TextMid>R$ {(movie.price * cartCount).toFixed(2)}</TextMid>
+        <TextMid $align={'left'}>R$ {(movie.price * cartCount).toFixed(2)}</TextMid>
 
-        <PointerImg src={Trash} alt="Delete" onClick={() => removeFromCart(true)} />
+        <PointerImg
+          src={Trash}
+          alt="Delete"
+          onClick={() => removeFromCart(true)}
+          style={{ justifySelf: 'right' }}
+        />
       </CartTableHeader>
     </>
   )

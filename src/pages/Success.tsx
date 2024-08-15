@@ -10,7 +10,7 @@ const Success = ({ navigateTo }: SuccessProps) => {
     <div className="empty-page">
       <Text>Compra realizada com sucesso!</Text>
       <img src={SuccessIcon} alt="Success" />
-      <Button onClick={() => navigateTo()}>Voltar</Button>
+      <Button $maxW onClick={() => navigateTo()}>Voltar</Button>
     </div>
   )
 }

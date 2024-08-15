@@ -19,10 +19,12 @@ const Button = styled.button<{ $success?: boolean; $maxW?: boolean }>`
   font-size: 12px;
   font-weight: 700;
   line-height: 16.34px;
+  width: 100%;
 
   &:hover {
     background-color: #0073a1;
   }
+
 
   ${props =>
     props.$success &&

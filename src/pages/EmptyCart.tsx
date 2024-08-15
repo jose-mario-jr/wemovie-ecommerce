@@ -9,7 +9,7 @@ const EmptyCart = ({ navigateTo }: SuccessProps) => {
     <div className="empty-page">
       <Text>Parece que não há nada por aqui</Text>
       <img src={ReloadPage} alt="Reload Page" />
-      <Button onClick={() => navigateTo()}>Voltar</Button>
+      <Button $maxW onClick={() => navigateTo()}>Voltar</Button>
     </div>
   )
 }

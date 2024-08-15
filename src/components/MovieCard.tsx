@@ -1,6 +1,9 @@
 import AddCart from '../assets/AddCart.svg'
 import { CartType, MovieCardProps } from '../types'
 import Button from './Button'
+import MovieCardItem from './MovieCardItem'
+import TextExtraSmall from './TextExtraSmall'
+import TextMid from './TextMid'
 
 const MovieCard = ({ movie, cartCount, setCart }: MovieCardProps) => {
   const { id, title, price, image } = movie
@@ -14,23 +17,20 @@ const MovieCard = ({ movie, cartCount, setCart }: MovieCardProps) => {
   }
 
   return (
-    <div className="movie-card">
+    <MovieCardItem>
       <div>
-        <img className="cover" src={image} alt={title} />
-        <p>{title}</p>
-        <span>R$ {price}</span>
+        <img src={image} alt={title} width={147} height={188} />
+        <TextExtraSmall>{title}</TextExtraSmall>
+        <TextMid>R$ {price}</TextMid>
       </div>
-      <Button
-        $success={!!cartCount}
-        onClick={onClickAddToCart}
-      >
+      <Button $success={!!cartCount} onClick={onClickAddToCart}>
         <div>
           <img src={AddCart} alt="Add to cart" />
           <span>{cartCount || 0}</span>
         </div>
         <p>ADICIONAR AO CARRINHO</p>
       </Button>
-    </div>
+    </MovieCardItem>
   )
 }
 
