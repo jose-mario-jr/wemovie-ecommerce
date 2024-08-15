@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 const TextSmall = styled.span`
   color: #2F2E41;
