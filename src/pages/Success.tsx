@@ -2,15 +2,15 @@ import React from 'react'
 
 import SuccessIcon from '../assets/Success.svg'
 import { SuccessProps } from '../types'
+import Button from '../components/Button'
+import Text from '../components/Text'
 
 const Success = ({ navigateTo }: SuccessProps) => {
   return (
     <div className="empty-page">
-      <p>Compra realizada com sucesso!</p>
+      <Text>Compra realizada com sucesso!</Text>
       <img src={SuccessIcon} alt="Success" />
-      <button className="empty" onClick={() => navigateTo()}>
-        voltar
-      </button>
+      <Button onClick={() => navigateTo()}>Voltar</Button>
     </div>
   )
 }

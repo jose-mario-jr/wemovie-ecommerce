@@ -1,6 +1,7 @@
 import CartItem from '../components/CartItem'
 import EmptyCart from './EmptyCart'
 import { CartProps } from '../types'
+import Button from '../components/Button'
 
 const Cart = ({ cart, movies, setCart, navigateTo }: CartProps) => {
   const cartMovies = Object.keys(cart)
@@ -33,9 +34,9 @@ const Cart = ({ cart, movies, setCart, navigateTo }: CartProps) => {
         <span>TOTAL</span>
         <span className="price">R$ {totalValue.toFixed(2)}</span>
       </div>
-      <button className="empty finish-order" onClick={finishOrder}>
-        <p>Finalizar pedido</p>
-      </button>
+      <Button className="finish-order" onClick={finishOrder}>
+        FINALIZAR PEDIDO
+      </Button>
     </div>
   ) : (
     <EmptyCart navigateTo={navigateTo} />

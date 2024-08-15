@@ -121,21 +121,7 @@ body,
   line-height: 27.24px;
 }
 
-button {
-  text-transform: uppercase;
-  border: none;
-  color: white;
-  height: 40px;
-  padding: 8px;
-  border-radius: 4px;
-  min-width: 157px;
-  cursor: pointer;
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
-}
-
+  
 .movie-card button div {
   display: flex;
 }
@@ -154,18 +140,6 @@ button {
   color: white;
 }
 
-button.empty {
-  background-color: #009edd;
-  transition: all 0.3s ease-out;
-}
-
-button.empty:hover {
-  background-color: #0073a1;
-}
-
-button.selected {
-  background-color: #039b00;
-}
 
 button img {
   width: 14px;

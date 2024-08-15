@@ -1,15 +1,15 @@
 import React from 'react'
 import ReloadPage from '../assets/Reload-page.svg'
 import { SuccessProps } from '../types'
+import Button from '../components/Button'
+import Text from '../components/Text'
 
-const EmptyCart = ({navigateTo}: SuccessProps) => {
+const EmptyCart = ({ navigateTo }: SuccessProps) => {
   return (
     <div className="empty-page">
-      <p>Parece que não há nada por aqui</p>
+      <Text>Parece que não há nada por aqui</Text>
       <img src={ReloadPage} alt="Reload Page" />
-      <button className="empty" onClick={() => navigateTo()}>
-        Voltar
-      </button>
+      <Button onClick={() => navigateTo()}>Voltar</Button>
     </div>
   )
 }
