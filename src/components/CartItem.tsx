@@ -8,6 +8,9 @@ import CoverContainer from './CartTable/CoverContainer'
 import TextSmall from './TextSmall'
 import TextMid from './TextMid'
 import CoverPrice from './CartTable/CoverPrice'
+import CountForm from './CartTable/CountForm'
+import QtInput from './CartTable/QtInput'
+import PointerImg from './CartTable/PointerImg'
 
 const CartItem = ({ movie, cartCount, setCart }: CartItemProps) => {
   const addToCart = () => {
@@ -66,17 +69,14 @@ const CartItem = ({ movie, cartCount, setCart }: CartItemProps) => {
             <TextMid>R$ {movie.price}</TextMid>
           </CoverPrice>
         </CoverContainer>
-        <div className="count-form">
-          <img src={Minus} alt="Delete" onClick={() => removeFromCart()} />
-          <input type="number" value={cartCount} readOnly />
-          <img src={Plus} alt="Add to cart" onClick={addToCart} />
-        </div>
-        <div className="subtotal">
-          <p>subtotal</p>
-          <span>R$ {(movie.price * cartCount).toFixed(2)}</span>
-        </div>
+        <CountForm>
+          <PointerImg src={Minus} alt="Delete" onClick={() => removeFromCart()} />
+          <QtInput type="number" value={cartCount} readOnly />
+          <PointerImg src={Plus} alt="Add to cart" onClick={addToCart} />
+        </CountForm>
+        <TextMid>R$ {(movie.price * cartCount).toFixed(2)}</TextMid>
 
-        <img src={Trash} alt="Delete" onClick={() => removeFromCart(true)} />
+        <PointerImg src={Trash} alt="Delete" onClick={() => removeFromCart(true)} />
       </CartTableHeader>
     </>
   )
