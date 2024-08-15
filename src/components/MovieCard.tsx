@@ -22,7 +22,7 @@ const MovieCard = ({ movie, cartCount, setCart }: MovieCardProps) => {
       <MovieCardDivs>
         <img src={image} alt={title} width={147} height={188} />
         <TextExtraSmall>{title}</TextExtraSmall>
-        <TextMid>R$ {price}</TextMid>
+        <TextMid>R$ {price.toFixed(2)}</TextMid>
       </MovieCardDivs>
       <Button $success={!!cartCount} onClick={onClickAddToCart}>
         <div>

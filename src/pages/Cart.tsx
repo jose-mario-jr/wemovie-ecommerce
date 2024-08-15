@@ -66,7 +66,7 @@ const Cart = ({ cart, movies, setCart, navigateTo }: CartProps) => {
         <div className="cart-divider"></div>
 
         <CartTableFooter>
-          <Button className="finish-order" onClick={finishOrder} $maxW>
+          <Button onClick={finishOrder} $maxW>
             FINALIZAR PEDIDO
           </Button>
           <TotalPrice>

@@ -157,7 +157,7 @@ button img {
   overflow-x: scroll;
 }
 
-.movie-card-container::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
 }
 .movie-card {
@@ -207,6 +207,9 @@ button img {
   padding: 16px;
   margin: 16px;
   border-radius: 4px;
+  
+  overflow-y: scroll;
+  height: calc(100% - 128px);
 }
 .cart-list {
   display: flex;

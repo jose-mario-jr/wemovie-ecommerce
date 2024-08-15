@@ -40,7 +40,7 @@ const CartItem = ({ movie, cartCount, setCart }: CartItemProps) => {
           <div className="top">
             <p className="title">{movie.title}</p>
 
-            <span className="price">R$ {movie.price}</span>
+            <span className="price">R$ {movie.price.toFixed(2)}</span>
             <img
               src={Trash}
               alt="Delete"
@@ -65,7 +65,7 @@ const CartItem = ({ movie, cartCount, setCart }: CartItemProps) => {
           <img src={movie.image} alt={movie.title} width={147} height={188} />
           <CoverPrice>
             <TextSmall>{movie.title}</TextSmall>
-            <TextMid>R$ {movie.price}</TextMid>
+            <TextMid>R$ {movie.price.toFixed(2)}</TextMid>
           </CoverPrice>
         </CoverContainer>
         <CountForm>
