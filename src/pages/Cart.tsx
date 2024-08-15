@@ -1,11 +1,8 @@
-import React from 'react'
+import CartItem from '../components/CartItem'
+import EmptyCart from './EmptyCart'
+import { CartProps } from '../types'
 
-import CartItem from '../components/CartItem.tsx'
-import EmptyCart from './EmptyCart.tsx'
-
-const Cart = props => {
-  const { cart, movies, setCart } = props
-
+const Cart = ({ cart, movies, setCart, navigateTo }: CartProps) => {
   const cartMovies = Object.keys(cart)
     .map(id => movies.find(e => e.id === parseInt(id)))
     .filter(e => e)
@@ -16,7 +13,7 @@ const Cart = props => {
 
   const finishOrder = () => {
     setCart({})
-    props.navigateTo('success')
+    navigateTo('success')
   }
 
   return cartMovies.length > 0 ? (
@@ -41,7 +38,7 @@ const Cart = props => {
       </button>
     </div>
   ) : (
-    <EmptyCart voltar={props.navigateTo} />
+    <EmptyCart voltar={navigateTo} />
   )
 }
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import './App.css'
 import { useEffect, useState } from 'react'
-import Header from './layout/Header.tsx'
-import Cart from './pages/Cart.tsx'
-import Home from './pages/Home.tsx'
-import Success from './pages/Success.tsx'
+import Header from './layout/Header'
+import Cart from './pages/Cart'
+import Home from './pages/Home'
+import Success from './pages/Success'
 
 const App = () => {
   const [loading, setLoading] = useState(true)
