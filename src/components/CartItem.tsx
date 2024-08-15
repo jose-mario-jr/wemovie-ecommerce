@@ -25,7 +25,7 @@ const CartItem = ({ movie, cartCount, setCart }: CartItemProps) => {
     setCart((prev: CartType) => {
       const newCart = { ...prev }
       newCart[movie.id] = newCart[movie.id] - 1
-      console.log([newCart, all, movie.id])
+
       if (all || newCart[movie.id] <= 0) {
         delete newCart[movie.id]
       }
