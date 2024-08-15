@@ -121,7 +121,6 @@ body,
   line-height: 27.24px;
 }
 
-  
 .movie-card button div {
   display: flex;
 }
@@ -139,7 +138,6 @@ body,
   text-align: center;
   color: white;
 }
-
 
 button img {
   width: 14px;
@@ -238,6 +236,7 @@ button img {
 .cart-item .right-container .bottom {
   display: flex;
   gap: 16px;
+  justify-content: space-around;
 }
 .cart-item .title {
   font-size: 14px;
@@ -310,7 +309,13 @@ button img {
   line-height: 32.68px;
 }
 
-.cart button.finish-order {
+.finish-order {
   width: 100%;
   margin-top: 16px;
+}
+
+@media (min-width: 768px) {
+  .cart, .cart-item {
+    display: none;
+  }
 }

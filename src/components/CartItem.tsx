@@ -2,6 +2,12 @@ import Trash from '../assets/Trash.svg'
 import Minus from '../assets/Minus.svg'
 import Plus from '../assets/Plus.svg'
 import { CartItemProps, CartType } from '../types'
+import CartTableItem from './CartTable/CoverContainer'
+import CartTableHeader from './CartTable/CartTableHeader'
+import CoverContainer from './CartTable/CoverContainer'
+import TextSmall from './TextSmall'
+import TextMid from './TextMid'
+import CoverPrice from './CartTable/CoverPrice'
 
 const CartItem = ({ movie, cartCount, setCart }: CartItemProps) => {
   const addToCart = () => {
@@ -25,28 +31,54 @@ const CartItem = ({ movie, cartCount, setCart }: CartItemProps) => {
   }
 
   return (
-    <div className="cart-item">
-      <img className="cover" src={movie.image} alt={movie.title} />
-      <div className="right-container">
-        <div className="top">
-          <p className="title">{movie.title}</p>
+    <>
+      <div className="cart-item">
+        <img className="cover" src={movie.image} alt={movie.title} />
+        <div className="right-container">
+          <div className="top">
+            <p className="title">{movie.title}</p>
 
-          <span className="price">R$ {movie.price}</span>
-          <img src={Trash} alt="Delete" onClick={() => removeFromCart(true)} />
-        </div>
-        <div className="bottom">
-          <div className="count-form">
-            <img src={Minus} alt="Delete" onClick={() => removeFromCart()} />
-            <input type="number" value={cartCount} readOnly />
-            <img src={Plus} alt="Add to cart" onClick={addToCart} />
+            <span className="price">R$ {movie.price}</span>
+            <img
+              src={Trash}
+              alt="Delete"
+              onClick={() => removeFromCart(true)}
+            />
           </div>
-          <div className="subtotal">
-            <p>subtotal</p>
-            <span>R$ {(movie.price * cartCount).toFixed(2)}</span>
+          <div className="bottom">
+            <div className="count-form">
+              <img src={Minus} alt="Delete" onClick={() => removeFromCart()} />
+              <input type="number" value={cartCount} readOnly />
+              <img src={Plus} alt="Add to cart" onClick={addToCart} />
+            </div>
+            <div className="subtotal">
+              <p>subtotal</p>
+              <span>R$ {(movie.price * cartCount).toFixed(2)}</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <CartTableHeader>
+        <CoverContainer>
+          <img src={movie.image} alt={movie.title} width={147} height={188} />
+          <CoverPrice>
+            <TextSmall>{movie.title}</TextSmall>
+            <TextMid>R$ {movie.price}</TextMid>
+          </CoverPrice>
+        </CoverContainer>
+        <div className="count-form">
+          <img src={Minus} alt="Delete" onClick={() => removeFromCart()} />
+          <input type="number" value={cartCount} readOnly />
+          <img src={Plus} alt="Add to cart" onClick={addToCart} />
+        </div>
+        <div className="subtotal">
+          <p>subtotal</p>
+          <span>R$ {(movie.price * cartCount).toFixed(2)}</span>
+        </div>
+
+        <img src={Trash} alt="Delete" onClick={() => removeFromCart(true)} />
+      </CartTableHeader>
+    </>
   )
 }
 

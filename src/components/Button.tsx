@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-const Button = styled.button<{ $success?: boolean }>`
+const Button = styled.button<{ $success?: boolean; $maxW?: boolean }>`
   border: none;
   color: white;
   height: 40px;
@@ -20,7 +20,6 @@ const Button = styled.button<{ $success?: boolean }>`
   font-weight: 700;
   line-height: 16.34px;
 
-
   &:hover {
     background-color: #0073a1;
   }
@@ -29,6 +28,11 @@ const Button = styled.button<{ $success?: boolean }>`
     props.$success &&
     css`
       background-color: #039b00;
+    `}
+  ${props =>
+    props.$maxW &&
+    css`
+      max-width: 173px;
     `}
 `
 
