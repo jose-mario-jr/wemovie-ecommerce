@@ -5,10 +5,11 @@ import Header from './layout/Header'
 import Cart from './pages/Cart'
 import Home from './pages/Home'
 import Success from './pages/Success'
+import { MovieType } from './types'
 
 const App = () => {
   const [loading, setLoading] = useState(true)
-  const [movies, setMovies] = useState([])
+  const [movies, setMovies] = useState<MovieType[]>([])
   const [cart, setCart] = useState({})
   const [route, setRoute] = useState('home')
 
@@ -43,7 +44,7 @@ const App = () => {
           navigateTo={navigateTo}
         />
       )}
-      {route === 'success' && <Success voltar={navigateTo} />}
+      {route === 'success' && <Success navigateTo={navigateTo} />}
     </div>
   )
 }

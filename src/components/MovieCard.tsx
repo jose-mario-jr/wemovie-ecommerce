@@ -1,12 +1,11 @@
-import React from 'react'
 import AddCart from '../assets/AddCart.svg'
+import { CartType, MovieCardProps } from '../types'
 
-const MovieCard = props => {
-  const { id, title, price, image } = props.movie
-  const { cartCount, setCart } = props
+const MovieCard = ({ movie, cartCount, setCart }: MovieCardProps) => {
+  const { id, title, price, image } = movie
 
   const onClickAddToCart = () => {
-    setCart(prev => {
+    setCart((prev: CartType) => {
       const newCart = { ...prev }
       newCart[id] = newCart[id] ? newCart[id] + 1 : 1
       return newCart

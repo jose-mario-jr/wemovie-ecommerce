@@ -1,27 +1,24 @@
-import React from 'react'
 import Trash from '../assets/Trash.svg'
 import Minus from '../assets/Minus.svg'
 import Plus from '../assets/Plus.svg'
+import { CartItemProps, CartType } from '../types'
 
-const CartItem = props => {
-  const { id, title, price, image } = props.movie
-  const { cartCount, setCart } = props
-
+const CartItem = ({ movie, cartCount, setCart }: CartItemProps) => {
   const addToCart = () => {
-    setCart(prev => {
+    setCart((prev: CartType) => {
       const newCart = { ...prev }
-      newCart[id] = newCart[id] ? newCart[id] + 1 : 1
+      newCart[movie.id] = newCart[movie.id] ? newCart[movie.id] + 1 : 1
       return newCart
     })
   }
 
   const removeFromCart = (all = false) => {
-    setCart(prev => {
+    setCart((prev: CartType) => {
       const newCart = { ...prev }
-      newCart[id] = newCart[id] - 1
-      console.log([newCart, all, id])
-      if (all || newCart[id] <= 0) {
-        delete newCart[id]
+      newCart[movie.id] = newCart[movie.id] - 1
+      console.log([newCart, all, movie.id])
+      if (all || newCart[movie.id] <= 0) {
+        delete newCart[movie.id]
       }
       return newCart
     })
@@ -29,12 +26,12 @@ const CartItem = props => {
 
   return (
     <div className="cart-item">
-      <img className="cover" src={image} alt={title} />
+      <img className="cover" src={movie.image} alt={movie.title} />
       <div className="right-container">
         <div className="top">
-          <p className="title">{title}</p>
+          <p className="title">{movie.title}</p>
 
-          <span className="price">R$ {price}</span>
+          <span className="price">R$ {movie.price}</span>
           <img src={Trash} alt="Delete" onClick={() => removeFromCart(true)} />
         </div>
         <div className="bottom">
@@ -45,7 +42,7 @@ const CartItem = props => {
           </div>
           <div className="subtotal">
             <p>subtotal</p>
-            <span>R$ {(price * cartCount).toFixed(2)}</span>
+            <span>R$ {(movie.price * cartCount).toFixed(2)}</span>
           </div>
         </div>
       </div>

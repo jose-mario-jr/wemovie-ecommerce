@@ -5,7 +5,7 @@ import { CartProps } from '../types'
 const Cart = ({ cart, movies, setCart, navigateTo }: CartProps) => {
   const cartMovies = Object.keys(cart)
     .map(id => movies.find(e => e.id === parseInt(id)))
-    .filter(e => e)
+    .filter(e => !!e)
 
   const totalValue = cartMovies.reduce((acc, movie) => {
     return acc + movie.price * cart[movie.id]
@@ -38,7 +38,7 @@ const Cart = ({ cart, movies, setCart, navigateTo }: CartProps) => {
       </button>
     </div>
   ) : (
-    <EmptyCart voltar={navigateTo} />
+    <EmptyCart navigateTo={navigateTo} />
   )
 }
 
